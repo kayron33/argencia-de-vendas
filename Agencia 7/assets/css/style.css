@@ -1,4 +1,230 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200; 1.300;1.400;1.500;1.600;1.700;1.800;1.900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+/*-----------------------------------*\
+#COFIGURAÇÕES
+\*-----------------------------------*/
 
+:root {
+
+    /** ----- CORES -----*/
+    --cor-1: hsl(236, 57%, 25%);
+    --cor-2: hsl(286, 86%, 34%);
+    --cor-3: hsl(231, 68%, 21%);
+    --cor-4: hsl(39, 100%, 52%);
+    --cor-5: hsl(230, 41%, 25%);
+    --cor-6: hsl(230, 59%, 16%);
+    --cor-7: hsla(335, 87%, 53%, 0.5);
+    --cor-8: hsl(236, 26%, 46%);
+    --cor-9: hsl(275, 54%, 33%);
+    --cor-10: hsl(286, 65%, 52%);
+    --cor-11: hsl(286, 87%, 51%);
+    --cor-12: hsl(0, 0%, 90%);
+    --cor-13: hsla(0, 0%, 0%, 0.7);
+    --cor-14: hsl(29, 99%, 67%);
+    --cor-15: hsl(0, 0%, 100%);
+    --cor-16: hsl(0, 0%, 95%);
+    --cor-17: hsl(0, 0%, 80%);
+    --cor-18: hsl(0, 0%, 70%);
+    
+    
+    --gradiente-1: linear-gradient(90deg, var(--cor-3) 0, var(--cor-9) 51%, var(--cor-3));
+    --gradiente-2: linear-gradient(90deg, var(--cor-11), var(--cor-14));
+    
+    
+    
+    /* ----- TIPOGRAFIA - FONTES DO SITE -----*/
+    
+      --ff-source-sans-pro: 'Source Sans Pro', sans-serif;
+      --ff-poppins: 'Poppins', sans-serif;
+    
+      --fs-1: 4.2rem;
+      --fs-2: 3.8rem;
+      --fs-3: 3.2rem;
+      --fs-4: 2.5rem;
+      --fs-5: 2.4rem;
+      --fs-6: 2rem;
+      --fs-7: 1.8rem;
+      --fs-8: 1.5rem;
+      --fs-10: 10px;
+      --fs-11: 32px;
+      --fs-12: 2.8rem;
+    
+      --fw-500: 500; 
+      --fw-600: 600; 
+      --fw-700: 700; 
+    
+      /* ----- BORDAS DO SITE -----*/
+     
+      --radius-4: 4px;
+      --radius-12: 12px;
+    
+      /* ----- ESPAÇAMENTOS DO SITE -----*/
+    
+      --section-padding: 60px;
+    
+    
+      /* ----- TRANSIÇÕES DO SITE -----*/
+      --transition-1: 0.15s ease;  
+      --transition-2: 0.35s ease;  
+      --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28); 
+      --cubic-out: cubic-bezier(0.33, 0.85, 0.56, 1.02); 
+      
+      /* ----- SOMBRAS DO SITE -----*/
+    
+      --shadow: 0 5px 20px 1px hsla(220, 63%, 33%, 0.1);  
+      --shadow-2: 0 2px 30px hsla(0, 0%, 0%, 0.1);
+    
+      
+    }
+
+
+    /*-----------------------------------*\
+#RESET
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+a,
+input,
+img,
+span,
+button,
+ion-icon { display: block;}
+
+button,
+input{
+    background: none;
+    font:inherit;
+    border:none;
+}
+
+button{
+    cursor: pointer;
+}
+input{
+    width: 100%;
+}
+img{
+    height: auto;
+}
+ion-icon{
+    pointer-events: none;
+}
+address{
+    font-style: normal;  
+ }
+ html{
+    font-family: var(--ff-poppins);
+    font-size: var(--fs-10);
+    scroll-behavior: smooth; 
+}
+body{
+    background-color: var(--cor-15);
+    color: var(--cor-8);
+    font-size: var(--fs-7);
+} 
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--cor-16);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--cor-17);
+} 
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: var(--cor-18);
+} 
+
+
+    /*-----------------------------------*\
+# pagina iniucial-CONFIGURAÇÃO DO SITE
+\*-----------------------------------*/
+.container{
+    padding-inline: 15px;
+}
+.h2,
+.h3{
+    font-family: var(--ff-source-sans-pro);
+}
+    /*-----------------------------------*\
+# pagina inicial do destaque 
+\*-----------------------------------*/
+.destaque .btn{
+    display: none;
+}
+.destaque{
+color: var(--cor-15);
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+padding-block: 14px;
+z-index: 4;
+transition: var(--transition-1);
+}
+.destaque.active{
+    color: var(--cor-15);
+    position: fixed;
+    background-color: var(--cor-15);
+    box-shadow: var(--shadow-2);
+}
+.destaque .container{
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    font-size: var(--fs-3);
+    color: var(--cor-1);
+    font-family: var(--ff-source-sans-pro);
+}
+.nav-open-btn{
+    color: var(--cor-1);
+    font-size: var(--fs-11);
+    padding: 4px;
+}
+.navbar{
+    background-color: var(--cor-15);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: -280px;
+    max-width: 280px;
+    min-height: 100%;
+    padding: 20px;
+    z-index: 4;
+    transition: 0.25s var(--cubic-in);
+    visibility: hidden;
+}
+.navbar.active{
+    transform: translateX(280px);
+    visibility: visible;
+    transition: 0.5s var(--cubic-out);
+}
+.navbar-top{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-block: 10px 30px;
+}
+.navbar-top .logo{
+    color: var(--cor-1);
+    font-size: var(--fs-1);
+    font-weight: var(--fw-700);
+}
