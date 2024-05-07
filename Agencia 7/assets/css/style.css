@@ -186,6 +186,46 @@ body{
     object-fit: cover;
     /*object-position: top;*/
 }
+.animacao-banner{
+    animation: waveAnim 2s linear infinite alternate;
+}
+@keyframes waveAnim {
+    0%{transform: translate(0, 0) rotate(0);}
+    100%{transform: translate(2px, 2px) rotate(1deg);}
+}
+.section{
+    padding-block:var(--section-padding);
+}
+.section-title{
+    color: var(--cor-1);
+    font-size: var(--fs-3);
+    margin-block-end: 60px;
+    margin-inline: auto;
+    max-width: max-content;
+    
+}
+.underline{
+    position: relative;
+}
+.underline::before{
+    content: ;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 6px;
+    background-image: var(--gradiente-2);
+    border-radius: 10px;
+}
+:is(.servico-bl, .ms-ser-card) .title{
+font-size: var(--fs-4);
+font-weight: var(--fw-700);
+color: var(--cor-1);
+}
+:is(.servico-bl, .ms-ser-card, .noticia-bloco) .text{
+    font-size: var(--fs-8);
+}
 
 /*-----------------------------------*\
 # pagina inicial do destaque 
@@ -217,11 +257,11 @@ transition: var(--transition-1);
 }
 .logo{
     font-size: var(--fs-3);
-    color: var(--cor-1);
+    color: var(--cor-15);
     font-family: var(--ff-source-sans-pro);
 }
 .nav-open-btn{
-    color: var(--cor-1);
+    color: var(--cor-15);
     font-size: var(--fs-11);
     padding: 4px;
 }
@@ -286,3 +326,33 @@ padding-block: 10px 30px;
 # King
 \*-----------------------------------*/
 
+.king{
+    background-image: url("../img/msflix-bg-rodape.png"), 
+    url("../img/msflix-bg.png"),
+    var(--gradiente-1);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: -280px bottom, center, center;
+    background-size: auto, cover, auto;
+    padding-block-start:120px;
+    padding-block-end:var(--section-padding);
+}
+.king-conteudo{
+    margin-block-end: 60px ;
+}
+.king-p{
+    color: var(--cor-4);
+    font-size: var(--fs-7);
+    font-family: var(--ff-source-sans-pro);
+    margin-block-end: 15px ;
+}
+.king-titulo{
+    font-size: var(--fs-1);
+    color: var(--cor-15);
+    margin-block-end: 20px ;
+
+}
+.king-text{
+    font-size: var(--fs-8);
+    color: var(--cor-15);
+    margin-block-end: 30px ;
+}
