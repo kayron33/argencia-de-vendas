@@ -636,6 +636,106 @@ color: var(--cor-12);
     }
 }
 
+/*-----------------------------------*\
+# rodape 
+\*-----------------------------------*/
+.footer{
+    font-size: var(--fs-8);
+}
+.footer a{
+    color: inherit;
+}
+.footer-top{
+    background-image: url("../img/bg-rodape.png"),
+    var(--gradiente-1);
+    background-repeat: no-repeat;
+    background-position:  center, center;
+    background-size:  auto,200%;
+    color: var(--cor-12);
+   
+}
+
+.footer-brand{
+    margin-block-end: 30px;
+
+}
+.footer-brand .logo{
+    font-weight: var(--fw-700);
+    margin-block-end: 15px;
+}
+.footer-brand .text{
+    font-size: var(--fs-7);
+    margin-block-end: 20px;
+
+}
+.social-list{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.footer-top .social-link{
+    background-color: var(--cor-15);
+    color: var(--cor-10);
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 50%;
+}
+.footer-list:not(:last-child){
+    margin-block-end: 25px;
+}
+
+.footer-list-title{
+    margin-block-end: 15px;
+    font-size: var(--fs-5);
+    font-weight: var(--fw-700);
+    font-family: var(--ff-source-sans-pro);
+}
+
+.footer-link{
+    padding-block:5px ;
+}
+
+:is(.footer-link,.footer-item-link):not(address):is(:hover, :focus){
+text-decoration: underline;
+}
+
+.footer-item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding-block:10px ;
+}
+.footer-item-icon{
+    background-image: var(--gradiente-2);
+    padding: 13px;
+    border-radius: 50%;
+    
+}
+
+.footer-bottom{
+    background-color: var(--cor-6);
+    color: var(--cor-15);
+    padding: 20px;
+    text-align: center;
+}
+.copyright-link{
+    display: inline-block;
+    text-decoration: underline;
+    color: var(--cor-15);
+}
+.copyright-link:is(:hover, :focus){
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
 
 /*-----------------------------------*\
 # CELULAR 550 
@@ -672,6 +772,17 @@ color: var(--cor-12);
     .noticia-bloco a{
         height: 100%;
     }
+
+    .footer-brand,
+    .footer-list:not(:last-child){
+        margin-block-end: 0;
+
+    }
+    .footer-top .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 50px;
+    }
     
 }
 
@@ -707,6 +818,9 @@ color: var(--cor-12);
     display: grid;
     grid-template-columns: 1fr 1fr ;
     gap: 25px;
+   }
+   .footer-top{
+    grid-template-columns: repeat(3,1fr);
    }
 }
 
@@ -777,6 +891,15 @@ grid-column: 1/4;
     display: grid;
     place-items: center;
    }
+   .footer-top .container{
+    grid-template-columns: repeat(4,1fr);
+   }
+   .footer-brand{
+    grid-column: 1/5;
+   }
+   .footer-brand .text{
+    max-width: 45ch;
+   }
 
 
 }
@@ -785,7 +908,7 @@ grid-column: 1/4;
 # COMPUTADOR 1200px
 \*-----------------------------------*/
 
-@media(min-width:992px){
+@media(min-width:1200px){
     .container{
         max-width: 1200px;
     }
@@ -811,6 +934,11 @@ grid-column: 1/4;
     justify-content: space-between;
 
 }
-
+.footer-top .container{
+    grid-template-columns: 1fr 0.5fr 0.7fr 0.5fr 1fr;
+   }
+   .footer-brand{
+    grid-column: auto;
+   }
 
 }
