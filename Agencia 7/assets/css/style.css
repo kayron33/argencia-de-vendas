@@ -730,7 +730,29 @@ text-decoration: underline;
 }
 
 
-
+/*-----------------------------------*\
+# RETORNO AO TOPO
+\*-----------------------------------*/
+.go-top{
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    background-color: var(--cor-10);
+    color: var(--cor-15);
+    font-size: var(--fs-1);
+    border-radius: var(--radius-4);
+    box-shadow: -3px 3px 15px var(--cor-7);
+    z-index: 5;
+    transition: var(--transition-1);
+    margin-bottom: 15px;
+    opacity: 0;
+    visibility: hidden;
+}
+.go-top.active{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-15px);
+}
 
 
 
